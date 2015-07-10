@@ -1,0 +1,44 @@
+up-Arrow:
+ move the commands level up till the first command entered is reached. 
+down-arrow:
+ move the command level down from the current command to the command, entered last.
+ctrl+left-arrow:
+ move the cursor to start of the command 
+ctrl+ right-arrow
+ move the cursor to the end of the command 
+ctrl+a:
+ move the cursor to start of the line/command
+ctrl+e:
+ move the cursor to the end of the command
+ctrl+u:
+ remove the current line on which we are entering the command.
+ctrl+k:
+ remove the characters from current poistion of the cursor to the end of line.
+ctrl+w:
+ remove a single word from current position of the cursor backwards.
+ctrl+r:
+ let us search through the command history, by typing commands or words entered previously
+tab:
+ autocompletes the command along with its arguments but the thing has to be there in the current working directory.
+cd:
+ changes the directory to the given argument does not matter where we are.
+cd -:
+it returns to the last path from where we used cd.
+!$:
+uses the arguments from the last command entered.
+!!:
+ it executes the last command or any other command eneterd using a specific word
+mkdir: 
+ creats a new directory in the current working directory.
+^wrong-command^right-command:
+this command will replace the wrongly typed command to the right version and also use the arguments from the last entered command.
+history:
+this command list the complete history of commands entered a session.
+history|grep arg:
+list all the commands eneterd using the word arg.
+!(number):
+it will run the command with this command number in the history.
+sudo:
+it gives the root previledge temperorily to the system user
+ 
+ 
