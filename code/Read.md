@@ -1,0 +1,3 @@
+this section is for coding assigment I mean the algorithmic problems 
+that I will solve during boot 2015 will be push to code sub-directory
+this is it....
