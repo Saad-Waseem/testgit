@@ -1,0 +1,19 @@
+there can be many entities in a social networking website.But I think
+following entities are more common and should be an integral part of a
+social media.
+
+I am working on academia.com. A social media for students and researchers
+where they share their interests and research work 
+
+1:  Student
+2:  Researcher
+3:  University
+4:  Research Paper
+5:  Friend
+6:  Follower
+7:  Activity 
+8:  Message
+9:  Inbox
+10: News Feed
+
+
