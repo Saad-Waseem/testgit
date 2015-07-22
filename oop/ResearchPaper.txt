@@ -1,0 +1,30 @@
+class ResearchPaper{
+// can have following attrs
+private:
+title
+abstract
+author
+coauthors
+subject
+datePublished
+views
+journalName
+DigitalLibrary
+content 
+// following actions can be performed on RP 
+public:
+void setTtitle()
+void setAbstract()
+void setAuhtor()
+void setCo-author()
+void setdate()
+void countViews()
+void setJournal()
+void setLibrary()
+void setContent()
+// show all set values
+void show()
+// similalry getters can be defined
+
+
+}

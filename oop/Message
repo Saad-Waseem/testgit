@@ -1,0 +1,12 @@
+class Message{
+msg_Title
+msg_datetime
+msg_to
+msg_from
+msg_content
+msg_delivery_status
+
+publiC:
+deleteMsg()
+CreateMsg()
+}

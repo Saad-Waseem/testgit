@@ -1,0 +1,11 @@
+class Uni{
+private:
+Name;
+location;
+URL;
+// can be performed
+setName()
+setLocation()
+setURL()
+// similarly getters
+}

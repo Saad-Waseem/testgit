@@ -1,0 +1,31 @@
+class Student {
+private: 
+ String firstName;
+String lastname;
+ String email;
+ String Password;
+ String Postion;
+FriendList
+Followings
+
+Public:
+void setfirstName(String fn)
+{
+\\ setter for name
+}
+String getName()
+{}
+void setlastName(String ln)
+{
+}
+String getLastName()
+{}
+void setPassword(String pwd)
+{}
+void setPosition(String pos)
+{}
+String getPosition()
+{}
+void manageFriendList()
+void manageFollowing()
+

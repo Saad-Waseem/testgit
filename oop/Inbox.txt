@@ -1,0 +1,9 @@
+Class Inbox{
+msgList;
+addMsg()
+deleteMsg()
+updateInbox();
+makeConversation();
+addMsgsToconversation();
+
+}

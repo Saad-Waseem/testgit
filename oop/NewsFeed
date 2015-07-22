@@ -1,0 +1,23 @@
+class NewsFeed{
+// attr of NewsFeed
+from
+actionPerformed
+paperTitle
+views
+paperAuthor
+subjectLink
+rank
+bookmark
+download
+// actions that can be performed
+public:
+getPerformerName()
+generateActionPerformed();
+getPaperTitle()
+countViews()
+generateauthorname()
+getsubjectLink()
+ShowRank()
+do_bookmark()
+do_download() 
+}

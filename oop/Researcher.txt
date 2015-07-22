@@ -1,0 +1,33 @@
+class Researcher{
+// can have the follwing attributes
+private:
+String FName;
+String Lname;
+String email;
+String pwd;
+String Affiliation;
+bool alumnus;
+string gender 
+publications
+interests
+major
+minor
+FriendList
+Following
+// can perform follwong actions
+public:
+setFname()
+setLname()
+setemail()
+setpwd()
+setAffiliation()
+setalumnus()
+setgender()
+setPublications()
+setmajor()
+setminor()
+setInterestList
+manageFriendList()
+manageFollowing()
+
+}
