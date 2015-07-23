@@ -5,7 +5,6 @@ String lastname;
  String email;
  String Password;
  String Postion;
- University uni;
 FriendList
 Followings
 
