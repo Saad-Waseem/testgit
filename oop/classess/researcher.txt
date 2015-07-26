@@ -1,0 +1,7 @@
+ID  FirstName LastName  email password  uni_name  uni_loc uni_URL  publications  user_type
+1	sw	ww	ww	ww	ww			ww,ww,w,w	Researcher
+1	wq	wq	wq	qwqw	qw	er	er	qwert,qwerty	Researcher
+1	qw	we	rt	eeq	asd	asd	asd	asdfgh,asdfww,dddddd	Researcher
+1	qqqqq	qqqq	qqqqq	qqqq	qqq	qqq	qq	qq,qq,qq	Researcher
+1	qqqqqq	qqqqq	qqqqq	qqqqqqq	qqqqqqq	qqqqqqq	qqqqqqq	qqqqq,qqqqqq,qqqqqq,qqqqqq	Researcher
+1	wwwww	wwwww	wwwwww	wwwww	wwwwwww	wwwwww	wwwwww	wwwwwww,wwwww,wwwwww	Researcher

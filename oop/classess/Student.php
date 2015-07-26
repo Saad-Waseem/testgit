@@ -1,6 +1,7 @@
 <?php
-include ("User.php");
-include ("University.php");
+include_once ("User.php");
+include_once ("University.php");
+
 class Student extends User{
   
  var  $uni ;
@@ -8,11 +9,11 @@ class Student extends User{
   {
     $this->uni = new University;
   }
-  function setUni()
+  function setUni($uname,$ulocation,$url)
   {
-    $this->uni->setUniname("GCU");
-    $this->uni->setUnilocation("Lahore");
-    $this->uni->setURL("www.gcu.edu");
+    $this->uni->setUniname($uname);
+    $this->uni->setlocation($ulocation);
+    $this->uni->setURL($url);
   }
   function getUni()
   {

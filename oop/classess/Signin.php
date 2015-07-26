@@ -1,5 +1,6 @@
 <?php
-include("DBHandler.php");
+include_once("DBHandler.php");
+
 class Signin
 {
   var $email;
@@ -11,7 +12,7 @@ class Signin
     $this->email = "";
     $this->pwd = "";
     $this->isloggedin = false ;
-    $db = new DBHandler;
+    $this->db = new DBHandler;
   }
   function enterCredentials()
   {
@@ -27,7 +28,7 @@ class Signin
   }
   function search()
   {
-    if($db->select($this->email,$this->pwd))
+    if($this->db->select($this->email,$this->pwd))
     {
       $this->isloggedin = true;
   $fw =fopen("php://stdout" , "w");
@@ -43,6 +44,13 @@ class Signin
 
     }
   }
-
+  function getIsloggedin()
+  {
+    return $this->isloggedin;
+  }
+  function getEmail()
+  {
+    return $this->email;
+  }
 }
 ?>

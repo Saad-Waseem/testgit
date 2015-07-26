@@ -1,4 +1,8 @@
-ID	FirstName	LastName	Email	Password
+ID	FirstName	LastName	Email	Password  uni_name  uni_loc uni_URL 	pubs  interests user_type
 1	saad	waseem	ssa@asas.com 	12345
-1	sh	sh	ar	aq
 1	saad	waseem	saad@gmail.com	63737
+1	swed	wesd	wesd	1234	qwer	tyu	iop	Student
+1	qqqqqq	qqqqqqq	qqqqqqq	qqqqqqq	qqqqqq	qqqq	qqqq	qqqq,qqqq,qs	Researcher
+1	qwe	urr	ieue	peoeo	eee	khfy	fjfyf	Student
+1	sa	wa	sa	sa	gc	lh	gc	computer;prog;algo	Student
+1	wq	wq	wq	wq	wq	wq	wq		comp;algo	Researcher
