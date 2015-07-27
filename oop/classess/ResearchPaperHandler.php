@@ -8,37 +8,40 @@ class ResearchPaperHandler
   var $db;
   function __construct()
   {
-    $this->paper = new ResearchPaper;
+  //  $this->paper = new ResearchPaper;
     $this->list = array();
     $this->db = new DBHandler;
   }
   function createPaper()
   {
+   $i =0 ;
     $val = "";
      $fw =fopen("php://stdout" , "w");
     $fr = fopen("php://stdin" , "r");
-    $fr = fopen("php://stdin", "r");
- do  {
+
+    do  {
+  $this->paper = new ResearchPaper; 
     fprintf($fw,"%s","Enter Research Paper Title: ");
-    fscanf($fr ,$val);
+    fscanf($fr,"%s" ,$val);
     $this->paper->setTitle($val); 
-  
      fprintf($fw,"%s","Enter Abstract: ");
-    fscanf($fr ,$val);
+    fscanf($fr,"%s" ,$val);
     $this->paper->setAbstract($val);
     fprintf($fw,"%s","Enter Author : ");
-    fscanf($fr ,$val);
+    fscanf($fr,"%s" ,$val);
     $this->paper->setAuthor($val);
     fprintf($fw,"%s","Enter Journal in which this paper is published : ");
-    fscanf($fr ,$val);
+    fscanf($fr,"%s" ,$val);
     $this->paper->setJournal($val);
    fprintf($fw,"%s","Upload Paper : ");
-    fscanf($fr ,$val);
+    fscanf($fr,"%s" ,$val);
     $this->paper->setContent("paper1.txt");
-    $this->addToList($this->paper);
-   fprintf($fw,"%s","Enter' a' to add another Research Paper or q to quit: ");
-    fscanf($fr ,$val);
-    }   while ( $val != 'q');
+    $this->list[$i++] = $this->paper;
+  //  $this->addToList($this->paper);
+ fprintf($fw,"%s","Enter' a' to add another Research Paper or q to quit: ");
+    fscanf($fr,"%s" ,$val);
+ } 
+    while ( $val != 'q');
   
   }
   function addToList($p)
@@ -48,14 +51,14 @@ class ResearchPaperHandler
 
   function savePapers($email)
   {
-    $str = "";
-    for($i =0 ; $i < count($p) ; $i++)
+    $str = " ";
+    for($i =0 ; $i < count($this->list) ; $i++)
     {
-      $str ="{". $this->list[$i]->getTitle()."\t".$this->list[$i]->getAbstract()."\t".$this->list[$i]->getAuthor() ."\t".$this->list[$i]->getJournal() ."\t".$this->getContent()."}\n";
-
+      $str ="[".$this->list[$i]->gettitle()."\t".$this->list[$i]->getAbstract()."\t".$this->list[$i]->getAuthor()."\t".$this->list[$i]->getJournal()."\t".$this->list[$i]->getContent()."]"."\n";
+      $fw = fopen("php://stdout" , "w");
       $this->db->insertPaper($email , $str);
-   
     }
   }
+
 }
 ?>

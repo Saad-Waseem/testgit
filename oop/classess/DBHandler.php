@@ -69,10 +69,12 @@ class DBHandler
     else
     return false;
   }
-  function insertPapers($email , $papers)
+  function insertPaper($email , $papers)
   {
+    $fw = fopen("php://stdout", "w");
     if(file_exists("researchpapers.txt"))
     {
+      fprintf($fw , "REp");
       $filehandler = fopen("researchpapers.txt",'a');
       fwrite($filehandler,$email."\t");
       fwrite($filehandler,$papers);

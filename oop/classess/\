@@ -214,23 +214,22 @@ class Controller
   function addResearchPaper($si , $email )
   {
     $rph = new ResearchPaperHandler;
-    $p='';
+    $p="";
     $fw =fopen("php://stdout" , "w");
     $fr = fopen("php://stdin", "r");
-    fprintf($fw,"%s","Enter < a > to add your research Papers or press s to skip:");
-    fscanf($fr,"%s",$p);   
-    if($p =='a')
+    fprintf($fw,"%s","Enter'a' to add your research Papers or press s to skip: ");
+    fscanf($fr  , $p);
+    //	  if(trim($p) =="a")
     {
       $rph->createPaper();
       $rph->savePapers($email); 
     }
-    else if ($p == 's')
+    //	  else if ($p == "s")
     {
       fclose($fr);
       fclose($fw);
       $this->reDisplay($si);
     }
-
   }
   function generateFeeds($si , $email)
   {

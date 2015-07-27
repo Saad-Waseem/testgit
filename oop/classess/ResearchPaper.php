@@ -1,23 +1,25 @@
 <?php
 class ResearchPaper{
-  var $title;
+  var $ttitle;
   var $abstract;
   var $author;
-  var $coauthors;
-  var  $subject;
-  var  $datePublished;
-  var $views;
   var $journalName;
-  var  $DigitalLibrary;
-  var $content; 
-
+  var $ccontent; 
+  function __construct()
+  {
+ $this->ttitle = "  ";
+ $this->abstract = "  ";
+ $this->author = "  " ;
+  $this->journalName = "  ";
+  $this->ccontent = "  ";
+  }
   function setTitle($t)
   {
-    $this->title = $t;
+    $this->ttitle = $t;
   }
   function gettitle()
   {
-    return $this->title;
+    return $this->ttitle;
   }
   function setAbstract($a)
   {
@@ -41,7 +43,7 @@ class ResearchPaper{
   }  // void setdate()
   function countViews()
   {
-    $this->count++;
+//    $this->count++;
   }
   function getViews()
   {
@@ -59,11 +61,11 @@ class ResearchPaper{
   function setContent($path)
   {
     //set path to the file and store it into the file
-    $this->content = $path;
+    $this->ccontent = $path;
   }
   function getContent()
   {
-    return $this->content;
+    return $this->ccontent;
   }
 
   // // show all set values

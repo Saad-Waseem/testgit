@@ -8,3 +8,4 @@ ID	FirstName	LastName	Email	Password  uni_name  uni_loc uni_URL 	pubs  interests
 1	wq	wq	wq	wq	wq	wq	wq		comp;algo	Researcher
 1	shah	meer	tttt	1234	nlhrgcu.edu{}	Student
 1	as	as	as	as	asasas[ ]	{}	Researcher
+1	saad	wseem	saadsaad@gmail.com	12345	gculhrgcu.edu{}	Student
