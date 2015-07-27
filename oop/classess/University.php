@@ -6,7 +6,7 @@ var $location = "";
 var $URL = "";
   function setUniname($n)
   {
-$this->name= n;
+$this->name= $n;
   }
   function setLocation($l)
   {

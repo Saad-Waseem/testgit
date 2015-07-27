@@ -1,0 +1,7 @@
+follower  followed
+ssa@asas.com	{saad@gmail.com}
+
+ssa@asas.com	{saad}
+
+ssa@asas.com	{saad@gmail.com}
+

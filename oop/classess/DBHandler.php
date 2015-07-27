@@ -12,7 +12,7 @@ class DBHandler
     //
     self::$autoID = self::$autoID + 1;
 
-    if(file_exists("/var/www/classes/users.txt"))
+    if(file_exists("users.txt"))
     {
       $filehandler = fopen("users.txt",'a');
       fwrite($filehandler,self::$autoID."\t");
@@ -37,7 +37,8 @@ class DBHandler
   }
   public function select($email , $pwd)
   {
-    $filehandler = fopen ("/var/www/classes/users.txt", "r" );
+    $count = 0;
+    $filehandler = fopen ("users.txt", "r" );
     while(!feof($filehandler))
     {
       $line =  fgets($filehandler);
@@ -45,14 +46,32 @@ class DBHandler
       for ($i =0 ; $i < count($arr); $i++)
       {
         if(strcmp(trim($email),trim($arr[$i])) == 0 )
-          return true;
+        {
+          $count = $count + 1 ;
+        }
       }
     }
+    $filehandler = fopen ("users.txt", "r" );
+    while(!feof($filehandler))
+    {
+      $line =  fgets($filehandler);
+      $arr = explode("\t" , $line);
+      for ($i =0 ; $i < count($arr); $i++)
+      {
+        if(strcmp(trim($pwd),trim($arr[$i])) == 0 )
+        {
+          $count = $count + 1 ;
+        }
+      }
+    }
+    if($count == 2)
+      return true;
+    else
     return false;
   }
   function insertPapers($email , $papers)
   {
-    if(file_exists("/var/www/classes/researchpapers.txt"))
+    if(file_exists("researchpapers.txt"))
     {
       $filehandler = fopen("researchpapers.txt",'a');
       fwrite($filehandler,$email."\t");
@@ -66,7 +85,7 @@ class DBHandler
     $p="";
     $fw = fopen("php://stdout","w");
     //  fprintf($fw , "Dbhandler select papers");
-    if(file_exists("/var/www/classes/researchpapers.txt"))
+    if(file_exists("researchpapers.txt"))
     {
       $filehandler = fopen("researchpapers.txt",'r');
       while(!feof($filehandler))
@@ -92,7 +111,7 @@ class DBHandler
   function search($email)
   {
     $fw = fopen ("php://stdout", "w");
-    $filehandler = fopen ("/var/www/classes/users.txt", "r" );
+    $filehandler = fopen ("users.txt", "r" );
     while(!feof($filehandler))
     {
       $line =  fgets($filehandler);
@@ -111,7 +130,7 @@ class DBHandler
   }
   function addFollowing($follower , $followed)
   {
-    if(file_exists("/var/www/classes/following.txt"))
+    if(file_exists("following.txt"))
       
     {
       $filehandler = fopen("following.txt",'a');

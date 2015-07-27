@@ -9,6 +9,7 @@ include_once("NewsFeed.php");
 class Controller
 {
   var $user;
+  var $issignedout = false;
   function displayMenu()
   {
     $choice;
@@ -170,30 +171,45 @@ class Controller
     $si = new Signin;
     $si->enterCredentials();
     $si->search();
-
-    if($si->getIsloggedin()==true)
+    $this->reDisplay($si);
+    if($this->issignedout == true) 
     {
-    $choice;
-    $fr = fopen("php://stdin","r");
-    $fw = fopen("php://stdout" ,"w");
-    fprintf($fw,"%s","Enter your choice\n");
-    fprintf($fw,"%s","1: Add Resarch Paper to your profile\n2:generate feeds\n3: To Follow Someone ");
-    fscanf($fr,"%s",$choice);
-    switch($choice)
-    {
-    case 1:
-      $this->addResearchPaper($si->getEmail());
-      break;
-    case 2:
-      $this->generateFeeds($si->getEmail());
-      break;
-    case 3:
-      $this->follow($si->getEmail());
-      break;
+      exit("\nyour are signed out\n");
     }
+    else
+    {
+      $this->reDisplay($si);
     }
   }
-  function addResearchPaper($email )
+  function reDisplay($signin)
+  {
+    if($signin->getIsloggedin()==true)
+    {
+      $choice;
+      $fr = fopen("php://stdin","r");
+      $fw = fopen("php://stdout" ,"w");
+      fprintf($fw,"%s","Enter your choice\n");
+      fprintf($fw,"%s","1: Add Resarch Paper to your profile\n2:generate feeds\n3: To Follow Someone\n4: Sign out\nyour choice:\t ");
+      fscanf($fr,"%s",$choice);
+      switch($choice)
+      {
+      case 1:
+        $this->addResearchPaper($signin , $signin->getEmail());
+        break;
+      case 2:
+        $this->generateFeeds($signin , $signin->getEmail());
+        break;
+      case 3:
+        $this->follow($signin , $signin->getEmail());
+        break;
+      case 4:
+        $this->signout();
+        break;
+
+      }
+    }
+  }
+  function addResearchPaper($si , $email )
   {
     $rps = array();
     $fw =fopen("php://stdout" , "w");
@@ -210,47 +226,57 @@ class Controller
     $db->insertPapers($email ,"{".implode(";", $rps)."}\n");
     fclose($fr);
     fclose($fw);
-
+$this->reDisplay($si);
   }
-  function generateFeeds($email)
+  function generateFeeds($si , $email)
   {
     $feeds = new NewsFeed;
     $arr = array();
-  $arr =   $feeds->getResearchPapers($email);
+    $arr =   $feeds->getResearchPapers($email);
     $fw = fopen("php://stdout" , "w");
- //   fprintf($fw , $arr);
-   
+    //   fprintf($fw , $arr);
+
     for($i = 0 ; $i  < count($arr) ; $i++)
     {
       fprintf($fw , $arr[$i]."\n");
     }
-   
+$this->reDisplay($si);
   }
-  function follow($user_email)
+  function follow($si , $follower)
   {  
-    $email = "";
-  $fw = fopen("php://stdout" , "w");
-  $fr = fopen("php://stdin", "r");
- 
-     fprintf($fw , "Enter the email of the person you want to follow:\t");
- $arr  = array();
-   $db = new DBHandler;
-   
-  $p="";$i=0;
-    while($p!='s')
-    {
-      fscanf($fr,"%s",$p);
-   if( $db->search($email)== true && $p != 's')
-    {
-      $arr[$i++] = $p;
-    }
+    $followed = "";
+    $fw = fopen("php://stdout" , "w");
+    $fr = fopen("php://stdin", "r");
 
+    fprintf($fw , "Enter the email of the person you want to follow:\t");
+    $arr  = array();
+    $db = new DBHandler;
+
+   $i=0;
+    while($followed!='s')
+    {
+      fscanf($fr,"%s",$followed);
+      if( $db->search($followed)== true && $followed != 's')
+      {
+        $arr[$i++] = $followed;
+      }
+      else
+      {
+        if($followed != 's')
+        fprintf($fw , "this is not a valid user|| Enter Another Email or s to skip:\t");
+  
+      }
     }
     if(count($arr)>0)
     {
-      $db->addFollowing($user_email ,"{".implode(";", $arr)."}\n");
+      $db->addFollowing($follower ,"{".implode(";", $arr)."}\n");
     }
-    }
+    $this->reDisplay($si);
+  }
+  function signout()
+  {
+    $this->issignedout = true;
+  }
 }
 $c = new Controller;
 $c->displayMenu();

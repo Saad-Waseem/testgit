@@ -6,3 +6,5 @@ ID	FirstName	LastName	Email	Password  uni_name  uni_loc uni_URL 	pubs  interests
 1	qwe	urr	ieue	peoeo	eee	khfy	fjfyf	Student
 1	sa	wa	sa	sa	gc	lh	gc	computer;prog;algo	Student
 1	wq	wq	wq	wq	wq	wq	wq		comp;algo	Researcher
+1	shah	meer	tttt	1234	nlhrgcu.edu{}	Student
+1	as	as	as	as	asasas[ ]	{}	Researcher
