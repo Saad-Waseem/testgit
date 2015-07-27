@@ -6,6 +6,7 @@ include_once("Student.php");
 include_once("Researcher.php");
 include_once("DBHandler.php");
 include_once("NewsFeed.php");
+include_once("ResearchPaperHandler.php");
 class Controller
 {
   var $user;
@@ -209,24 +210,27 @@ class Controller
       }
     }
   }
+
   function addResearchPaper($si , $email )
   {
-    $rps = array();
+    $rph = new ResearchPaperHandler;
+    $p='';
     $fw =fopen("php://stdout" , "w");
     $fr = fopen("php://stdin", "r");
-    fprintf($fw,"%s","Enter your research Papers or press s to skip: ");
-    $p="";$i=0;
-    while($p!='s')
+    fprintf($fw,"%s","Enter < a > to add your research Papers or press s to skip:");
+    fscanf($fr,$p);   
+    fprintf($fr ,"$p: ".$p);
+    if($p == "a")
     {
-      fscanf($fr,"%s",$p);
-      $rps[$i++] = $p;
+      $rph->createPaper();
+      $rph->savePapers($email); 
     }
-    $db = new DBHandler;
-
-    $db->insertPapers($email ,"{".implode(";", $rps)."}\n");
-    fclose($fr);
-    fclose($fw);
-$this->reDisplay($si);
+    else if ($p == "s")
+    {
+      fclose($fr);
+      fclose($fw);
+      $this->reDisplay($si);
+    }
   }
   function generateFeeds($si , $email)
   {
@@ -240,7 +244,7 @@ $this->reDisplay($si);
     {
       fprintf($fw , $arr[$i]."\n");
     }
-$this->reDisplay($si);
+    $this->reDisplay($si);
   }
   function follow($si , $follower)
   {  
@@ -252,7 +256,7 @@ $this->reDisplay($si);
     $arr  = array();
     $db = new DBHandler;
 
-   $i=0;
+    $i=0;
     while($followed!='s')
     {
       fscanf($fr,"%s",$followed);
@@ -263,8 +267,8 @@ $this->reDisplay($si);
       else
       {
         if($followed != 's')
-        fprintf($fw , "this is not a valid user|| Enter Another Email or s to skip:\t");
-  
+          fprintf($fw , "this is not a valid user|| Enter Another Email or s to skip:\t");
+
       }
     }
     if(count($arr)>0)

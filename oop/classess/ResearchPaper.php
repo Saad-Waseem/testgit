@@ -11,7 +11,7 @@ class ResearchPaper{
   var  $DigitalLibrary;
   var $content; 
 
-  function setTtitle($t)
+  function setTitle($t)
   {
     $this->title = $t;
   }
@@ -35,7 +35,7 @@ class ResearchPaper{
   {
     return $this->author;
   }
-  function setCo-author()
+  function setCoauthor()
   {
 
   }  // void setdate()
@@ -72,4 +72,5 @@ class ResearchPaper{
   //
   //
   // }
+}
 ?>
