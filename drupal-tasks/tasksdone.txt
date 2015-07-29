@@ -1,0 +1,4 @@
+drupal installation done 
+profile created
+drupal modules installed (simplenews,weather,googleAnalytics).
+learning content types etc..
