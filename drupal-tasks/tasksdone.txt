@@ -1,4 +1,15 @@
-drupal installation done 
-profile created
-drupal modules installed (simplenews,weather,googleAnalytics).
-learning content types etc..
+DAY-1
+1-  drupal installation done (DAY-1)
+DAY-2:
+2-  profile created (DAY-2)
+3-  drupal modules installed (simplenews,weather,googleAnalytics).(DAY-2).
+4- content types Learned
+5- Created A content type named Videos
+6- Added a new field in it named Video URL
+7- Modified Comments Commit from required to optional
+
+
+
+Practicle:
+  Content type created for adding youtube vidoes. I have also uploaded a 
+  video from vimeo..com
