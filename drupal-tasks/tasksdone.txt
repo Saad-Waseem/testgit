@@ -15,5 +15,6 @@ Practicle-1:
   video from vimeo..com
 
 Practicle-2:
-  Image content type added with auto generated titles. Now one can uplaod 
-images pf his choice.
+  Image content type added with titles Hidden. Now one can uplaod 
+images of his choice.And that will not have a title finally I have 
+implemented this feature.
