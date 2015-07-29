@@ -10,6 +10,10 @@ DAY-2:
 
 
 
-Practicle:
+Practicle-1:
   Content type created for adding youtube vidoes. I have also uploaded a 
   video from vimeo..com
+
+Practicle-2:
+  Image content type added with auto generated titles. Now one can uplaod 
+images pf his choice.
