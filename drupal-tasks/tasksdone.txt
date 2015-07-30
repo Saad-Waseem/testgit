@@ -23,4 +23,7 @@ DAY-3
 
 Practicle-1 
   new Theme installed.
+Practicle-2
+  User voting on videos is enabled. Now any user can vote for the content
+  uploaded to videos content type.
 
