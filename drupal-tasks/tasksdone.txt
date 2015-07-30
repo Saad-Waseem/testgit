@@ -29,4 +29,10 @@ Practical-2
 Practical-3
   toboggen login module is installed and implemented. Now login/registration can be done on home page.
   emails can be used to login and many other features.
-  
+
+MISC:
+1-code Academy: 
+2-PHP course done 73% [in progress].
+3-VIM:
+Find and replace command
+4-drupal events searched.
