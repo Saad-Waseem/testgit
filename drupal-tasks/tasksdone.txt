@@ -10,20 +10,23 @@ DAY-2:
 
 
 
-Practicle-1:
+Practical-1:
   Content type created for adding youtube vidoes. I have also uploaded a 
   video from vimeo..com
 
-Practicle-2:
+Practical-2:
   Image content type added with titles Hidden. Now one can uplaod 
 images of his choice.And that will not have a title finally I have 
 implemented this feature.
 
 DAY-3
 
-Practicle-1 
+Practical-1 
   new Theme installed.
-Practicle-2
+Practical-2
   User voting on videos is enabled. Now any user can vote for the content
   uploaded to videos content type.
-
+Practical-3
+  toboggen login module is installed and implemented. Now login/registration can be done on home page.
+  emails can be used to login and many other features.
+  
