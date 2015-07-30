@@ -18,3 +18,9 @@ Practicle-2:
   Image content type added with titles Hidden. Now one can uplaod 
 images of his choice.And that will not have a title finally I have 
 implemented this feature.
+
+DAY-3
+
+Practicle-1 
+  new Theme installed.
+
