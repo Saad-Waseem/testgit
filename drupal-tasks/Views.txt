@@ -1,0 +1,3 @@
+I have learned views basic and implemented a basic view. 
+testing by aded content to content type. And tersting in it in the view 
+whether it appears or not.
