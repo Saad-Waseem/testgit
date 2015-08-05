@@ -1,0 +1,3 @@
+Learned drush. And develop the make file of my existing site.
+Then using installation profile installed drupal 7 for my new site.
+
